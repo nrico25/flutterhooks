@@ -48,7 +48,7 @@ class BangunDatar extends HookWidget {
           IconButton(
             icon: const Icon(Icons.arrow_left),
             onPressed: () {
-              context.go('/');
+              context.push('/');
             },
           ),
         ],

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class MyText extends StatelessWidget {
   final String image;
   final String nama;
-  final String Rumus;
   final double marginLeft;
   final double widthImage;
 
@@ -11,7 +10,6 @@ class MyText extends StatelessWidget {
       {super.key,
       required this.image,
       required this.nama,
-      required this.Rumus,
       required this.marginLeft,
       required this.widthImage});
 
@@ -29,7 +27,6 @@ class MyText extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(nama),
-              Text(Rumus),
             ],
           ),
         )
