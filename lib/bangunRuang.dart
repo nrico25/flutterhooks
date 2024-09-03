@@ -3,6 +3,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:teamhooks/widget/myTextField.dart'; 
 import 'package:teamhooks/widget/myButton.dart'; 
 import 'package:teamhooks/logic/geometric.dart'; 
+import 'package:go_router/go_router.dart';
+
 
 class BangunRuang extends HookWidget {
   final String nama;
@@ -53,13 +55,13 @@ class BangunRuang extends HookWidget {
       appBar: AppBar(
         actions: [
           IconButton(
-            icon: const Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_left),
             onPressed: () {
-              Navigator.of(context).pop();
+              context.push('/');
             },
           ),
         ],
-        title: Text('Bangun Ruang - $nama'),
+        title: Text('Bangun datar - $nama'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 48.0),

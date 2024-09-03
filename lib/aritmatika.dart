@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:teamhooks/widget/myTextField.dart';
 import 'package:teamhooks/widget/myButton.dart';
 import 'package:teamhooks/logic/aritmathic.dart';
+import 'package:go_router/go_router.dart';
 
 class KalkulatorAritmatika extends HookWidget {
   @override
@@ -21,7 +22,15 @@ class KalkulatorAritmatika extends HookWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Kalkulator Aritmatika'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.arrow_left),
+            onPressed: () {
+              context.push('/');
+            },
+          ),
+        ],
+        title: Text('Aritmatika'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 48.0),
