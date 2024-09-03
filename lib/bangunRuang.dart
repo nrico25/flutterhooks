@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:teamhooks/widget/myTextField.dart'; 
 import 'package:teamhooks/widget/myButton.dart'; 
+import 'package:teamhooks/logic/geometric.dart'; 
 
 class BangunRuang extends HookWidget {
   final String nama;
@@ -27,29 +28,25 @@ class BangunRuang extends HookWidget {
 
     void onCalculateCube() {
       final sisi = double.tryParse(sisiController.text);
-      cubeResult.value = sisi != null ? sisi * sisi * sisi : null;
+      cubeResult.value = Geometric.calculateCubeVolume(sisi);
     }
 
     void onCalculateRectangularPrism() {
       final length = double.tryParse(lengthController.text);
       final width = double.tryParse(widthController.text);
       final height = double.tryParse(heightController.text);
-      rectangularPrismResult.value = (length != null && width != null && height != null) 
-          ? length * width * height 
-          : null;
+      rectangularPrismResult.value = Geometric.calculateRectangularPrismVolume(length, width, height);
     }
 
     void onCalculateSphere() {
       final radius = double.tryParse(radiusController.text);
-      sphereResult.value = radius != null ? (4 / 3) * 3.14 * radius * radius * radius : null;
+      sphereResult.value = Geometric.calculateSphereVolume(radius);
     }
 
     void onCalculateCylinder() {
       final radius = double.tryParse(cylinderRadiusController.text);
       final height = double.tryParse(cylinderHeightController.text);
-      cylinderResult.value = (radius != null && height != null) 
-          ? 3.14 * radius * radius * height 
-          : null;
+      cylinderResult.value = Geometric.calculateCylinderVolume(radius, height);
     }
 
     return Scaffold(
@@ -69,6 +66,7 @@ class BangunRuang extends HookWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            
             Text("Volume Kubus"),
             MyTextField(
               label: "Masukkan Sisi",
@@ -89,6 +87,7 @@ class BangunRuang extends HookWidget {
 
             const SizedBox(height: 40),
 
+            
             Text("Volume Balok"),
             MyTextField(
               label: "Masukkan Panjang",
@@ -119,7 +118,7 @@ class BangunRuang extends HookWidget {
 
             const SizedBox(height: 40),
 
-          
+            
             Text("Volume Bola"),
             MyTextField(
               label: "Masukkan Jari-Jari",
@@ -140,7 +139,7 @@ class BangunRuang extends HookWidget {
 
             const SizedBox(height: 40),
 
-          
+            
             Text("Volume Silinder"),
             MyTextField(
               label: "Masukkan Jari-Jari",

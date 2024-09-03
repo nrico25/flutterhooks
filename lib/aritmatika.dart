@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:teamhooks/widget/myTextField.dart'; 
-import 'package:teamhooks/widget/myButton.dart'; 
+import 'package:teamhooks/widget/myTextField.dart';
+import 'package:teamhooks/widget/myButton.dart';
+import 'package:teamhooks/logic/aritmathic.dart';
 
 class KalkulatorAritmatika extends HookWidget {
   @override
   Widget build(BuildContext context) {
-
     final number1Controller = useTextEditingController();
     final number2Controller = useTextEditingController();
     final result = useState<String>('');
@@ -15,29 +15,8 @@ class KalkulatorAritmatika extends HookWidget {
       final num1 = double.tryParse(number1Controller.text);
       final num2 = double.tryParse(number2Controller.text);
 
-      if (num1 == null || num2 == null) {
-        result.value = 'Masukkan angka yang valid';
-        return;
-      }
-
-      switch (operation) {
-        case 'add':
-          result.value = 'Hasil: ${num1 + num2}';
-          break;
-        case 'subtract':
-          result.value = 'Hasil: ${num1 - num2}';
-          break;
-        case 'multiply':
-          result.value = 'Hasil: ${num1 * num2}';
-          break;
-        case 'divide':
-          if (num2 == 0) {
-            result.value = 'Pembagi tidak boleh nol';
-          } else {
-            result.value = 'Hasil: ${num1 / num2}';
-          }
-          break;
-      }
+      final aritmatika = Aritmatika(number1: num1, number2: num2);
+      result.value = aritmatika.calculate(operation);
     }
 
     return Scaffold(
