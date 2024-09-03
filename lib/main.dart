@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:teamhooks/bangundatar.dart';
 import 'package:teamhooks/perpangkatan.dart';
+import 'package:teamhooks/aritmatika.dart';
+import 'package:teamhooks/bangunRuang.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,4 +23,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
