@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:teamhooks/bangundatar.dart';
+import 'package:teamhooks/perpangkatan.dart';
 import 'package:teamhooks/aritmatika.dart';
 import 'package:teamhooks/bangunRuang.dart';
 
@@ -14,10 +16,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: BangunRuang(nama: ""),
+      home: BangunDatar(nama: '',),
     );
   }
 }
