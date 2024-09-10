@@ -27,8 +27,8 @@ class _ListViewDashboardState extends State<ListViewDashboard> {
       ),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,  // Dua item per baris
-          childAspectRatio: 0.75, // Mengatur perbandingan gambar dan teks
+          crossAxisCount: 2,  
+          childAspectRatio: 0.75, 
         ),
         itemCount: dataKalkulator.length,
         itemBuilder: (context, index) {
