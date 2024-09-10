@@ -26,7 +26,7 @@ class KalkulatorAritmatika extends HookWidget {
           IconButton(
             icon: const Icon(Icons.arrow_left),
             onPressed: () {
-              context.push('/');
+              context.pop();
             },
           ),
         ],

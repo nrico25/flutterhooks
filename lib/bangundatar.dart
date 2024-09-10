@@ -28,14 +28,12 @@ class BangunDatar extends HookWidget {
       squareResult.value = calculateSquareArea(sisi);
     }
 
-    // Calculate area for Rectangle
     void onCalculateRectangle() {
       final length = double.tryParse(lengthController.text);
       final width = double.tryParse(widthController.text);
       rectangleResult.value = calculateRectangleArea(length, width);
     }
 
-    // Calculate area for Triangle
     void onCalculateTriangle() {
       final base = double.tryParse(baseController.text);
       final height = double.tryParse(heightController.text);
@@ -48,7 +46,7 @@ class BangunDatar extends HookWidget {
           IconButton(
             icon: const Icon(Icons.arrow_left),
             onPressed: () {
-              context.push('/');
+              context.pop();
             },
           ),
         ],
@@ -58,7 +56,6 @@ class BangunDatar extends HookWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 48.0),
         child: Column(
           children: [
-            // Square Area
             Text("Luas Persegi"),
             MyTextField(
               Label: "Masukan Sisi",
@@ -79,7 +76,6 @@ class BangunDatar extends HookWidget {
             
             const SizedBox(height: 40),
 
-            // Rectangle Area
             Text("Luas Persegi Panjang"),
             MyTextField(
               Label: "Masukan Panjang",
@@ -105,7 +101,6 @@ class BangunDatar extends HookWidget {
 
             const SizedBox(height: 40),
 
-            // Triangle Area
             Text("Luas Segitiga"),
             MyTextField(
               Label: "Masukan Alas",
