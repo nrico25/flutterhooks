@@ -25,32 +25,40 @@ class _ListViewDashboardState extends State<ListViewDashboard> {
       appBar: AppBar(
         title: const Text("List Kalkulator"),
       ),
-      body: ListView.builder(
+      body: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,  // Dua item per baris
+          childAspectRatio: 0.75, // Mengatur perbandingan gambar dan teks
+        ),
         itemCount: dataKalkulator.length,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              switch (index) {
-                case 0:
-                  context.go('/aritmatika');
-                  break;
-                case 1:
-                  context.go('/bangunDatar');
-                  break;
-                case 2:
-                  context.go('/bangunRuang');
-                  break;
-                case 3:
-                  context.go('/perpangkatan');
-                  break;
-                default:
-                  break;
-              }
+              _handleTap(context, index);
             },
             child: AdapterList(model: dataKalkulator[index]),
           );
         },
       ),
     );
+  }
+
+  void _handleTap(BuildContext context, int index) {
+    switch (index) {
+      case 0:
+        context.go('/aritmatika');
+        break;
+      case 1:
+        context.go('/bangunDatar');
+        break;
+      case 2:
+        context.go('/bangunRuang');
+        break;
+      case 3:
+        context.go('/perpangkatan');
+        break;
+      default:
+        break;
+    }
   }
 }
