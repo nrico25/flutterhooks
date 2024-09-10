@@ -1,10 +1,11 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:teamhooks/widget/myTextField.dart'; 
-import 'package:teamhooks/widget/myButton.dart'; 
-import 'package:teamhooks/logic/geometric.dart'; 
+import 'package:teamhooks/widget/myTextField.dart';
+import 'package:teamhooks/widget/myButton.dart';
+import 'package:teamhooks/logic/geometric.dart';
 import 'package:go_router/go_router.dart';
-
 
 class BangunRuang extends HookWidget {
   final String nama;
@@ -37,7 +38,8 @@ class BangunRuang extends HookWidget {
       final length = double.tryParse(lengthController.text);
       final width = double.tryParse(widthController.text);
       final height = double.tryParse(heightController.text);
-      rectangularPrismResult.value = Geometric.calculateRectangularPrismVolume(length, width, height);
+      rectangularPrismResult.value =
+          Geometric.calculateRectangularPrismVolume(length, width, height);
     }
 
     void onCalculateSphere() {
@@ -61,15 +63,17 @@ class BangunRuang extends HookWidget {
             },
           ),
         ],
-        title: Text('Bangun datar - $nama'),
+        title: Text('Bangun Ruang - $nama'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 48.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
             Text("Volume Kubus"),
+            SizedBox(
+              height: 10,
+            ),
             MyTextField(
               label: "Masukkan Sisi",
               controller: sisiController,
@@ -84,27 +88,37 @@ class BangunRuang extends HookWidget {
             if (cubeResult.value != null)
               Text(
                 "Hasil: ${cubeResult.value}",
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-
             const SizedBox(height: 40),
-
-            
             Text("Volume Balok"),
+            SizedBox(
+              height: 10,
+            ),
             MyTextField(
               label: "Masukkan Panjang",
               controller: lengthController,
               hintText: "Panjang Balok",
+            ),
+            SizedBox(
+              height: 5,
             ),
             MyTextField(
               label: "Masukkan Lebar",
               controller: widthController,
               hintText: "Lebar Balok",
             ),
+            SizedBox(
+              height: 5,
+            ),
             MyTextField(
               label: "Masukkan Tinggi",
               controller: heightController,
               hintText: "Tinggi Balok",
+            ),
+            SizedBox(
+              height: 5,
             ),
             const SizedBox(height: 20),
             MyButton(
@@ -115,13 +129,14 @@ class BangunRuang extends HookWidget {
             if (rectangularPrismResult.value != null)
               Text(
                 "Hasil: ${rectangularPrismResult.value}",
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-
             const SizedBox(height: 40),
-
-            
             Text("Volume Bola"),
+            SizedBox(
+              height: 10,
+            ),
             MyTextField(
               label: "Masukkan Jari-Jari",
               controller: radiusController,
@@ -136,17 +151,21 @@ class BangunRuang extends HookWidget {
             if (sphereResult.value != null)
               Text(
                 "Hasil: ${sphereResult.value}",
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-
             const SizedBox(height: 40),
-
-            
             Text("Volume Silinder"),
+            SizedBox(
+              height: 10,
+            ),
             MyTextField(
               label: "Masukkan Jari-Jari",
               controller: cylinderRadiusController,
               hintText: "Jari-Jari Silinder",
+            ),
+            SizedBox(
+              height: 5,
             ),
             MyTextField(
               label: "Masukkan Tinggi",
@@ -162,7 +181,8 @@ class BangunRuang extends HookWidget {
             if (cylinderResult.value != null)
               Text(
                 "Hasil: ${cylinderResult.value}",
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
           ],
         ),

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Flutter Demo',
+      title: 'Flutter Demo',  
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -26,7 +26,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// Define routes using GoRouter
 final GoRouter _router = GoRouter(
   initialLocation: '/',
   routes: <GoRoute>[
