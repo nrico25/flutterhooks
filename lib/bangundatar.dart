@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:teamhooks/widget/textfield.dart';
 import 'package:go_router/go_router.dart';
-import 'logic/logicBangunDatar.dart'; 
+import 'logic/logicBangunDatar.dart';
 
 class BangunDatar extends HookWidget {
   final String nama;
@@ -11,7 +11,6 @@ class BangunDatar extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final sisiController = useTextEditingController();
     final squareResult = useState<double?>(null);
 
@@ -66,14 +65,19 @@ class BangunDatar extends HookWidget {
             ElevatedButton(
               onPressed: onCalculateSquare,
               child: const Text("Hitung Luas Persegi"),
+            style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal, 
+                foregroundColor: Colors.white,
+              ),
             ),
             const SizedBox(height: 20),
             if (squareResult.value != null)
               Text(
                 "Hasil: ${squareResult.value}",
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-            
+
             const SizedBox(height: 40),
 
             Text("Luas Persegi Panjang"),
@@ -91,12 +95,17 @@ class BangunDatar extends HookWidget {
             ElevatedButton(
               onPressed: onCalculateRectangle,
               child: const Text("Hitung Luas Persegi Panjang"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal, 
+                foregroundColor: Colors.white,
+              ),
             ),
             const SizedBox(height: 20),
             if (rectangleResult.value != null)
               Text(
                 "Hasil: ${rectangleResult.value}",
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
 
             const SizedBox(height: 40),
@@ -115,13 +124,18 @@ class BangunDatar extends HookWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: onCalculateTriangle,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal, 
+                foregroundColor: Colors.white,
+              ),
               child: const Text("Hitung Luas Segitiga"),
             ),
             const SizedBox(height: 20),
             if (triangleResult.value != null)
               Text(
                 "Hasil: ${triangleResult.value}",
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
           ],
         ),
