@@ -16,11 +16,9 @@ class Perpangkatan extends HookWidget {
     final result = useState<double?>(null);
 
     void onCalculatePressed() {
-      // Parsing the input numbers from the TextFields
       final number = double.tryParse(_numberController.text);
       final exponent = double.tryParse(_pangkatController.text);
 
-      // Calculate the power using the imported function and update the result state
       result.value = calculatePower(number, exponent);
     }
 
